@@ -49,7 +49,7 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden bg-background text-foreground">
+    <div className="overflow-hidden bg-background text-foreground">
       {/* HERO SECTION */}
       <section className="relative isolate flex flex-col overflow-hidden bg-neutral-950 sm:min-h-[720px] sm:justify-center">
         <div className="relative aspect-video w-full shrink-0 sm:absolute sm:inset-0 sm:aspect-auto">
@@ -373,6 +373,6 @@ export default function AboutPage() {
 
       <AwardsSection id="awards" />
 
-    </main>
+    </div>
   );
 }
