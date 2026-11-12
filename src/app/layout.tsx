@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "New India Automotive provides commercial vehicle accident repair, truck body repair, painting, towing assistance, and insurance claim assistance in Bhiwandi, Maharashtra.",
+    "New India Automotive provides commercial vehicle accident repair and workshop support for trucks and heavy vehicles in Bhiwandi, Maharashtra.",
 
   keywords: [
     "Commercial vehicle accident repair",
@@ -82,7 +82,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
