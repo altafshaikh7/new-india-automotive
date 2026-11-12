@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const animatedStatistics = [
-  { target: 9, suffix: "+", label: "Years of Experience" },
-  { target: 2500, suffix: "+", label: "Customers Served" },
-  { target: 5000, suffix: "+", label: "Trucks Repaired" },
+  { target: 2500, suffix: "+", label: "Customers" },
+  { target: 5000, suffix: "+", label: "Repairs Completed" },
+  { target: 2017, suffix: "", label: "Established" },
 ] as const;
 
-const staticStatistic = { value: "24/7", label: "Breakdown Support" } as const;
+const staticStatistic = { value: "24/7", label: "Support" } as const;
 const animationDuration = 1800;
 
 export default function HomeStatistics() {
