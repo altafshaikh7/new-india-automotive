@@ -60,7 +60,7 @@ export default async function ServiceDetailPage({
   );
 
   return (
-    <main className="overflow-hidden bg-background text-foreground">
+    <div className="overflow-hidden bg-background text-foreground">
       {/* HERO */}
       <section className="relative flex min-h-0 flex-col overflow-hidden bg-gray-950 sm:min-h-[500px] sm:flex-row sm:items-center md:min-h-[max(31.25rem,56.25vw)] lg:min-h-[min(56.25vw,47.5rem)]">
         <div className="relative aspect-video w-full shrink-0 sm:absolute sm:inset-0 sm:aspect-auto">
@@ -312,6 +312,6 @@ export default async function ServiceDetailPage({
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
