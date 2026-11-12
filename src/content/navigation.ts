@@ -7,7 +7,6 @@ export type NavigationLink = {
 
 export const primaryNavigation: NavigationLink[] = [
   { label: "Home", href: "/" },
-  { label: "Insurance", href: "/insurance" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
