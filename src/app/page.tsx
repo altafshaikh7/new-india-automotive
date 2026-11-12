@@ -32,21 +32,21 @@ const services = [
   {
     title: "Accident Repair",
     description:
-      "Commercial vehicle accident damage repair with attention to safety and workmanship.",
+      "Structural and panel repair for commercial vehicles after collisions, with a focus on safety, fit, and roadworthiness.",
     icon: Truck,
     href: "/services/accident-repair",
   },
   {
     title: "Truck Body Repair",
     description:
-      "Bodywork and restoration solutions for damaged trucks and heavy vehicles.",
+      "Bodywork, fabrication, and restoration for damaged trucks, trailers, and heavy commercial vehicles.",
     icon: Wrench,
     href: "/services",
   },
   {
     title: "Painting & Finishing",
     description:
-      "Vehicle body painting and finishing after repair work.",
+      "Professional surface preparation, colour matching, and finishing to restore a clean, durable vehicle appearance.",
     icon: ShieldCheck,
     href: "/services",
   },
@@ -64,7 +64,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen overflow-x-clip bg-background text-foreground">
+    <div className="min-h-screen overflow-x-clip bg-background text-foreground">
       {/* Hero Section */}
       <section
         id="home"
@@ -108,15 +108,15 @@ export default function Home() {
               <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
                 Commercial Vehicle
                 <br />
-                Accident Repair
+                Repair Support
                 <br />
-                <span className="text-red-500">You Can Rely On.</span>
+                <span className="text-red-500">Built Around Uptime.</span>
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-300 sm:text-lg">
-                We provide accident repair and restoration solutions for
-                trucks and commercial vehicles. Our goal is to help get your
-                vehicle back on the road.
+                New India Automotive has been serving the Mumbai region since
+                2017 with practical, dependable repair solutions for trucks,
+                buses, and other heavy commercial vehicles.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-4">
@@ -303,6 +303,6 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
-    </main>
+    </div>
   );
 }
