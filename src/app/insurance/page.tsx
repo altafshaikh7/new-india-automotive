@@ -5,13 +5,13 @@ import { MessageCircle, Phone } from "lucide-react";
 import { company } from "@/content/company";
 
 export const metadata: Metadata = {
-  title: "Insurance Claim Assistance",
+  title: "Workshop Enquiry",
   description:
-    "Contact New India Automotive to discuss insurance-related commercial vehicle repair enquiries.",
+    "Speak with New India Automotive about your commercial vehicle repair requirements in Bhiwandi.",
 };
 
 const whatsappUrl = `https://wa.me/${company.whatsapp.primary}?text=${encodeURIComponent(
-  `Hello ${company.name}, I would like to enquire about insurance-related vehicle repair assistance.`,
+  `Hello ${company.name}, I would like to discuss my vehicle repair requirements.`,
 )}`;
 
 export default function InsurancePage() {
@@ -22,13 +22,12 @@ export default function InsurancePage() {
           Vehicle Repair Enquiry
         </p>
         <h1 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
-          Insurance Claim Assistance
+          Talk to the Workshop
         </h1>
         <p className="mt-5 leading-7 text-muted-foreground">
-          Insurance claim assistance is listed among {company.name}&apos;s
-          services. Contact the workshop to discuss your vehicle repair
-          requirements. Claim eligibility, insurer approval, and outcomes are
-          determined by the relevant insurer and are not guaranteed here.
+          Whether your vehicle needs accident repair, denting, painting,
+          bodywork, or towing assistance, {company.name} can help assess the
+          requirement and advise on the next steps.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
