@@ -17,13 +17,13 @@ export const company = {
   },
 
   phone: {
-    primary: "8149949328",
-    alternate: "8237263878",
+    primary: "8237263878",
+    alternate: "8149949328",
   },
 
   whatsapp: {
-    primary: "918149949328",
-    alternate: "918237263878",
+    primary: "918237263878",
+    alternate: "918149949328",
   },
 
   email: "newindiaautomotivebuisness@gmail.com",
@@ -34,7 +34,7 @@ export const company = {
     "Dent Removal",
     "Painting",
     "Towing Assistance",
-    "Insurance Claim Assistance",
+    "Mechanical & Electrical Repair",
   ],
 
   brands: ["Ashok Leyland", "Eicher", "Tata", "Mahindra"],
