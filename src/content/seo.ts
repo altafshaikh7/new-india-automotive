@@ -1,6 +1,6 @@
 export const siteSeo = {
   siteName: "New India Automotive",
-  siteUrl: "https://newindiaautomotive.com",
+  siteUrl: "https://new-india-automotive.vercel.app",
   defaultTitle: "New India Automotive | Commercial Vehicle Accident Repair",
   defaultDescription:
     "New India Automotive provides commercial vehicle accident repair and workshop support for trucks, buses, and heavy vehicles in Bhiwandi, Maharashtra.",

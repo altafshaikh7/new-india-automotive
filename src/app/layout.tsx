@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/navbar";
 import ThemeProvider from "@/components/layout/theme-provider";
 import Footer from "@/components/layout/footer";
 import WhatsAppButton from "@/components/shared/whatsapp-button";
+import { siteSeo } from "@/content/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://newindiaautomotive.com"),
+  metadataBase: new URL(siteSeo.siteUrl),
 
   title: {
     default: "New India Automotive | Commercial Vehicle Accident Repair",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "New India Automotive",
-    url: "https://newindiaautomotive.com",
+    url: siteSeo.siteUrl,
     images: [
       {
         url: "/images/og/og-image.jpg",

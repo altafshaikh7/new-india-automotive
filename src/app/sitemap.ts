@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 
+import { siteSeo } from "@/content/seo";
 import { services } from "@/content/services";
 
-const siteUrl = "https://newindiaautomotive.com";
+const siteUrl = siteSeo.siteUrl;
 
 const staticRoutes = [
   "",
@@ -12,6 +13,7 @@ const staticRoutes = [
   "/contact",
   "/faq",
   "/gallery",
+  "/insurance",
   "/services",
 ];
 
