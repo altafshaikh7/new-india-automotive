@@ -1,191 +1,361 @@
-New India Automotive
-A responsive multi-page business website for New India Automotive, a
-commercial vehicle accident repair workshop based in Bhiwandi,
-Maharashtra.
-- Live website: https://new-india-automotive.vercel.app/
-- GitHub repository:
-  https://github.com/altafshaikh7/new-india-automotive
-- Established: 2017
-- Business focus: Commercial vehicle accident repair
-- Address: Bhatale, Vehele, Bhiwandi, Maharashtra 421302, India
-Table of Contents
-- Overview
-- Business Information
-- Features and Pages
-- Technology Stack
-- Architecture
-- Project Structure
-- Routing
-- Content Architecture
-- Assets
-- SEO
-- Customer Contact Flows
-- Local Setup
-- Scripts
-- Environment Variables
-- Deployment
-- Current Limitations
-- Future Improvements
-- Contributing
-- License
-Overview
-New India Automotive needed a professional online presence where
-customers could learn about the workshop, explore commercial vehicle
-repair services, view supported vehicle brands and workshop photographs,
-and contact the business.
 
-This project delivers a multi-page website built with the Next.js App
-Router. It uses reusable React components, centralized TypeScript
-content modules, locally hosted image assets, responsive layouts, page
-metadata, and generated sitemap and robots routes.
+<div align="center">
 
-The website is deployed on Vercel.
-Business Information
-  Field               Details
-  Business name       New India Automotive
-Established         2017
-Business category   Commercial Vehicle Accident Repair
-Address             Bhatale, Vehele, Bhiwandi
-State               Maharashtra
-PIN code            421302
-Country             India
-Primary phone       8237263878
-Alternate phone     8149949328
-Email               newindiaautomotivebuisness@gmail.com
+# 🚛 NEW INDIA AUTOMOTIVE
 
-Business details are centralized in src/content/company.ts.
-Features and Pages
-Home --- /
-The homepage is composed of reusable sections under
-src/components/home/, including: - Hero section - Company
-introduction - Services overview - Brand showcase - Company statistics -
-Why choose us - Insurance overview - Gallery preview - FAQ preview -
-Testimonials - Call-to-action section
-About Us --- /about
-Presents company background, workshop focus, highlights, values, and
-awards/recognition content. The page also includes the directors and
-awards presentation.
-Services --- /services
-Displays the service catalogue, currently defined in
-src/content/services.ts: - Accident Repair - Chassis Repair -
-Denting - Painting - Mechanical Repair - Electrical Work - Truck Body
-Repair - Towing Service
-Service details --- /services/[slug]
-A dynamic route renders an individual service from its slug. Static
-route parameters and page metadata are generated from the service data.
-Unknown slugs use Next.js not-found handling.
-Brands --- /brands
-Displays the brands currently listed in company.brands, with locally
-stored logo images. The company content currently lists Ashok Leyland,
-Eicher, Tata, and Mahindra.
-Gallery --- /gallery
-Displays workshop photographs stored in the public assets directory.
-Contact --- /contact
-Provides primary and alternate phone links, email, WhatsApp enquiry
-link, workshop address, Google Maps directions, and a link to the
-appointment request page.
-Book Appointment --- /book-appointment
-Provides phone and WhatsApp actions so customers can discuss a repair
-and request a suitable time. Online appointment booking is not
-implemented. Contacting the workshop does not automatically create or
-confirm an appointment.
-Insurance / Workshop Enquiry --- /insurance
-Provides repair enquiry information and direct call/WhatsApp actions. It
-is not an online insurance claim filing or tracking portal.
-FAQ --- /faq
-Currently displays a contact prompt because a published FAQ list is not
-yet rendered on this page.
-Not Found
-A custom src/app/not-found.tsx handles unmatched routes.
-Technology Stack
-  Technology       Purpose
-  Next.js 16.4.5   App Router, routing, metadata and production build
-React 19.3.0     UI components
-TypeScript 5     Static typing
-Tailwind CSS 4   Styling and responsive layouts
-shadcn/ui        UI component foundation/configuration
-Base UI React    Accessible UI primitives
-Motion           Animation and motion effects
-Lucide React     Icons
-next/font        Geist and Geist Mono font loading
-ESLint 9         Linting
-Vercel           Hosting and deployment
+### Commercial Vehicle Accident Repair & Workshop Services
 
-Exact versions are maintained in package.json and package-lock.json.
-Architecture
-High-level system architecture
-                         Customer Browser
-                                |
-                                v
-                    Vercel-hosted Next.js App
-                                |
-                                v
-                         Next.js App Router
-                                |
-              +-----------------+-----------------+
-              |                 |                 |
-              v                 v                 v
-          Route Pages      Shared Layout     Dynamic Routes
-          src/app          Navbar/Footer     services/[slug]
-              |                 |                 |
-              +-----------------+-----------------+
-                                |
-                                v
-                        React Components
-                                |
-             +------------------+------------------+
-             |                  |                  |
-             v                  v                  v
-         Home Sections     Service UI        Gallery/Awards
-             |                  |                  |
-             +------------------+------------------+
-                                |
-                                v
-                      Central Content Modules
-                          src/content/
-                                |
-                                v
-                       Static Assets (public/)
-Request flow
-1. A visitor opens a route in the browser.
-2. Next.js resolves the URL through the App Router.
-3. The matching page composes the required page and shared components.
-4. Shared TypeScript content modules provide company, navigation,
-   service, award, and SEO data.
-5. Next.js renders the page and serves static files from public/.
-6. Contact actions hand off to phone, email, WhatsApp, or Google Maps.
-Architecture characteristics
-- Next.js App Router.
-- Reusable React components.
-- Centralized content configuration.
-- Local static assets.
-- Dynamic service detail routing.
-- Page-level metadata and generated sitemap/robots routes.
-- Client components for interactions that require browser state.
-Project Structure
+**Keeping Commercial Vehicles Moving Forward.**
+
+[![Next.js](https://img.shields.io/badge/Next.js-16.4.5-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
+
+[🌐 Live Website](https://new-india-automotive.vercel.app/) · [📂 GitHub Repository](https://github.com/altafshaikh7/new-india-automotive) · [📞 Contact](https://new-india-automotive.vercel.app/contact)
+
+</div>
+
+---
+
+## 📖 About The Project
+
+**New India Automotive** is a professional business website developed for a commercial vehicle accident repair and workshop service company based in Bhiwandi, Maharashtra, India.
+
+Established in **2017**, the company focuses on commercial vehicle accident repair, truck body restoration, chassis repair, denting, painting, mechanical work, electrical repairs, and towing assistance.
+
+The website provides customers with information about the company, its services, vehicle brands, workshop photographs, awards, and contact details.
+
+The project is built using **Next.js, React, TypeScript, and Tailwind CSS**, following a component-based architecture with centralized content management.
+
+<div align="center">
+
+| 🏢 Business | 📍 Location | 📅 Established |
+|:---:|:---:|:---:|
+| New India Automotive | Bhiwandi, Maharashtra | 2017 |
+
+</div>
+
+## 🌐 Live Website
+
+<div align="center">
+
+### [https://new-india-automotive.vercel.app/](https://new-india-automotive.vercel.app/)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [📖 About The Project](#-about-the-project)
+- [🎯 Project Objectives](#-project-objectives)
+- [✨ Website Features](#-website-features)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [🏗️ System Architecture](#️-system-architecture)
+- [📂 Project Structure](#-project-structure)
+- [🧭 Application Routes](#-application-routes)
+- [🧩 Component Architecture](#-component-architecture)
+- [📊 Content Management Architecture](#-content-management-architecture)
+- [🖼️ Assets Management](#️-assets-management)
+- [🔍 SEO Architecture](#-seo-architecture)
+- [📞 Customer Communication Flow](#-customer-communication-flow)
+- [⚙️ Installation & Setup](#️-installation--setup)
+- [📜 Available Commands](#-available-commands)
+- [🌍 Environment Configuration](#-environment-configuration)
+- [🚀 Deployment](#-deployment)
+- [♿ Accessibility & Responsiveness](#-accessibility--responsiveness)
+- [⚠️ Current Implementation Status](#️-current-implementation-status)
+- [🛣️ Future Roadmap](#️-future-roadmap)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+
+---
+
+## 🎯 Project Objectives
+
+The primary objectives of this project are:
+
+- Establish a professional online presence for New India Automotive.
+- Present commercial vehicle repair services in a structured way.
+- Provide detailed information about the company and its workshop.
+- Showcase supported vehicle brands and company recognitions.
+- Display workshop photographs and service-related images.
+- Make phone, email, WhatsApp, and location information easily accessible.
+- Improve search engine visibility through technical SEO.
+- Deliver a responsive experience across desktop, tablet, and mobile devices.
+
+---
+
+## ✨ Website Features
+
+### 🏠 1. Homepage
+
+The homepage introduces the company and provides access to its main services and information.
+
+**Sections include:**
+
+- Hero section
+- Company introduction
+- Services overview
+- Vehicle brand showcase
+- Company statistics
+- Why Choose Us
+- Insurance information
+- Workshop gallery preview
+- FAQ preview
+- Testimonials section
+- Contact call-to-action
+
+### 🏢 2. About Us
+
+Provides information about the company's background and workshop operations.
+
+**Includes:**
+
+- Company introduction
+- Who We Are section
+- Company highlights
+- Company directors
+- Awards and recognition
+- Business values
+- Workshop information
+
+### 🔧 3. Services
+
+A dedicated services section presenting commercial vehicle repair solutions.
+
+| Service | Description |
+|---|---|
+| Accident Repair | Commercial vehicle accident damage restoration |
+| Chassis Repair | Chassis repair and structural restoration |
+| Denting | Vehicle body dent removal |
+| Painting | Commercial vehicle painting and finishing |
+| Mechanical Repair | Mechanical inspection and repair |
+| Electrical Work | Vehicle electrical diagnosis and repair |
+| Truck Body Repair | Truck body repair and restoration |
+| Towing Service | Vehicle recovery and towing assistance |
+
+Each service has a dedicated dynamic detail route.
+
+### 🚛 4. Vehicle Brands
+
+Displays vehicle brands listed in the company information:
+
+- Ashok Leyland
+- Eicher
+- Tata
+- Mahindra
+
+Brand logo assets are maintained locally in the project.
+
+### 🏆 5. Awards & Recognition
+
+Displays company awards and recognition:
+
+- Eicher — Second Runner Up, Overall Parts Business Performance (2025–26).
+- Eicher — Star Performer (2023–24).
+
+Award information and image paths are maintained in `src/content/awards.ts`.
+
+### 🖼️ 6. Workshop Gallery
+
+Displays workshop photographs to help visitors understand the company's workshop environment.
+
+### 📞 7. Contact Us
+
+Provides direct communication options:
+
+- Primary phone number
+- Alternate phone number
+- Email
+- WhatsApp
+- Workshop address
+- Google Maps directions
+
+### 📅 8. Appointment Request
+
+Allows visitors to contact the workshop through phone or WhatsApp to discuss an appointment.
+
+**Note:** Online appointment booking and automatic appointment confirmation are not currently implemented.
+
+### 🛡️ 9. Insurance / Workshop Enquiry
+
+Provides information for customers who want to discuss vehicle repair requirements and related enquiries.
+
+This is an enquiry page, not an online insurance claim management system.
+
+### ❓ 10. Frequently Asked Questions
+
+A dedicated FAQ route is available. The currently rendered page directs visitors to contact the company because a published FAQ list is not yet implemented there.
+
+---
+
+## 🛠️ Technology Stack
+
+The project uses the following technologies and tools:
+
+| Technology | Purpose |
+|---|---|
+| Next.js 16.4.5 | React framework and application routing |
+| React 19 | Component-based UI development |
+| TypeScript 5 | Static typing and maintainable code |
+| Tailwind CSS 4 | Responsive styling |
+| shadcn/ui | UI component foundation |
+| Base UI React | Accessible UI primitives |
+| Motion | UI animations |
+| Lucide React | Icons |
+| next/font | Geist font integration |
+| ESLint 9 | Code quality and linting |
+| Vercel | Deployment and hosting |
+| Git & GitHub | Version control and source management |
+
+**Package versions:** Refer to `package.json` and `package-lock.json` for the exact installed dependency versions.
+
+---
+
+## 🏗️ System Architecture
+
+The application follows a component-based architecture using the Next.js App Router.
+
+### High-Level Architecture
+
+```mermaid
+flowchart TD
+    A["👤 Customer / Browser"] --> B["🌐 Vercel Hosting"]
+    B --> C["⚡ Next.js App Router"]
+
+    C --> D["📄 Application Pages"]
+    C --> E["🧭 Shared Layout"]
+
+    D --> F["🧩 React Components"]
+    E --> F
+
+    F --> G["📊 Centralized Content"]
+    F --> H["🖼️ Static Assets"]
+
+    G --> I["Company Information"]
+    G --> J["Services & Awards"]
+    G --> K["Navigation & SEO"]
+
+    H --> L["Images & Brand Logos"]
+
+    F --> M["📞 External Contact Actions"]
+    M --> N["Phone / Email / WhatsApp / Maps"]
+```
+
+### Application Request Flow
+
+1. A visitor opens a website URL.
+2. Next.js App Router identifies the requested route.
+3. The corresponding page component is rendered.
+4. Shared layout and reusable components are composed.
+5. Centralized content modules provide business and page information.
+6. Static assets are served from the `public/` directory.
+7. Customer contact links open their respective external applications.
+
+### Architectural Principles
+
+- Component-based development.
+- Reusable UI components.
+- Centralized business content.
+- Dynamic service routing.
+- Static asset management.
+- Page-level SEO metadata.
+- Shared application layout.
+- Client-side interactions where required.
+
+---
+
+## 📂 Project Structure
+
+The following is the main application architecture and folder organization.
+
+```text
 new-india-automotive/
+│
 ├── public/
-│   ├── brands/                       # Vehicle brand logos
+│   │
+│   ├── brands/
+│   │   ├── AMW Peak Logo with Red Swoosh.png
+│   │   ├── Ashok Leyland Blue Emblem Logo.png
+│   │   ├── BharatBenz Chrome Emblem Logo.png
+│   │   ├── Eicher Red Horse Logo.png
+│   │   ├── Force Motors Blue and Black Logo.png
+│   │   ├── Mahindra Red Swoosh Logo.png
+│   │   ├── SML Isuzu Logo.png
+│   │   └── Tata Motors Blue Logo.png
+│   │
 │   ├── images/
-│   │   ├── awards/                   # Award images
-│   │   ├── hero/                     # Hero images and slideshow
-│   │   ├── services/                 # Service images
-│   │   ├── team/                     # Director/team photos
-│   │   └── workshop/                 # Workshop photos
-│   └── company-logo.png
+│   │   │
+│   │   ├── awards/
+│   │   │   ├── eicher-parts-performance-2025-26.jpeg
+│   │   │   ├── eicher-star-performer-2023-24.jpeg
+│   │   │   └── mahindra-genuine-spares-retailer.png
+│   │   │
+│   │   ├── hero/
+│   │   │   ├── home-hero.webp
+│   │   │   └── slideshow/
+│   │   │       ├── multi-brand-truck-lineup.webp
+│   │   │       ├── premium-workshop-scene.webp
+│   │   │       ├── truck-hero-final.webp
+│   │   │       ├── truck-on-highway.webp
+│   │   │       ├── truck-workshop-exterior.webp
+│   │   │       └── workshop-interior.webp
+│   │   │
+│   │   ├── services/
+│   │   │   ├── accident-repair.webp
+│   │   │   ├── chassis-repair.webp
+│   │   │   ├── denting.webp
+│   │   │   ├── electrical-work.webp
+│   │   │   ├── mechanical-repair.webp
+│   │   │   ├── painting.webp
+│   │   │   ├── services-hero.webp
+│   │   │   ├── towing-service.webp
+│   │   │   └── truck-body-repair.webp
+│   │   │
+│   │   ├── team/
+│   │   │   ├── owner-1.png
+│   │   │   └── owner-2.png
+│   │   │
+│   │   └── workshop/
+│   │       ├── workshop-about.webp
+│   │       └── workshop.webp
+│   │
+│   ├── company-logo.png
+│   └── google-site-verification.html
 │
 ├── src/
+│   │
 │   ├── app/
-│   │   ├── about/page.tsx
-│   │   ├── book-appointment/page.tsx
-│   │   ├── brands/page.tsx
-│   │   ├── contact/page.tsx
-│   │   ├── faq/page.tsx
-│   │   ├── gallery/page.tsx
-│   │   ├── insurance/page.tsx
-│   │   ├── services/
-│   │   │   ├── [slug]/page.tsx
+│   │   │
+│   │   ├── about/
 │   │   │   └── page.tsx
+│   │   │
+│   │   ├── book-appointment/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── brands/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── faq/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── gallery/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── insurance/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── services/
+│   │   │   ├── [slug]/
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   │
 │   │   ├── globals.css
 │   │   ├── layout.tsx
 │   │   ├── not-found.tsx
@@ -194,15 +364,71 @@ new-india-automotive/
 │   │   └── sitemap.ts
 │   │
 │   ├── components/
+│   │   │
 │   │   ├── awards/
+│   │   │   └── awards-section.tsx
+│   │   │
 │   │   ├── contact/
+│   │   │   ├── contact-info.tsx
+│   │   │   └── google-map.tsx
+│   │   │
 │   │   ├── forms/
+│   │   │   ├── appointment-form.tsx
+│   │   │   ├── contact-form.tsx
+│   │   │   └── form-demo-notice.tsx
+│   │   │
 │   │   ├── gallery/
+│   │   │   ├── gallery-grid.tsx
+│   │   │   └── gallery-lightbox.tsx
+│   │   │
 │   │   ├── home/
+│   │   │   ├── hero-section.tsx
+│   │   │   ├── intro-section.tsx
+│   │   │   ├── services-overview.tsx
+│   │   │   ├── brands-section.tsx
+│   │   │   ├── home-statistics.tsx
+│   │   │   ├── why-choose-us.tsx
+│   │   │   ├── insurance-overview.tsx
+│   │   │   ├── gallery-preview.tsx
+│   │   │   ├── faq-preview.tsx
+│   │   │   ├── testimonials-section.tsx
+│   │   │   └── cta-section.tsx
+│   │   │
 │   │   ├── layout/
+│   │   │   ├── navbar.tsx
+│   │   │   ├── mobile-nav.tsx
+│   │   │   ├── header.tsx
+│   │   │   ├── footer.tsx
+│   │   │   ├── company-logo.tsx
+│   │   │   ├── theme-provider.tsx
+│   │   │   └── theme-toggle.tsx
+│   │   │
 │   │   ├── services/
+│   │   │   ├── service-card.tsx
+│   │   │   └── service-detail.tsx
+│   │   │
 │   │   ├── shared/
+│   │   │   ├── animated-section.tsx
+│   │   │   ├── call-button.tsx
+│   │   │   ├── container.tsx
+│   │   │   ├── floating-actions.tsx
+│   │   │   ├── page-hero.tsx
+│   │   │   ├── section-heading.tsx
+│   │   │   └── whatsapp-button.tsx
+│   │   │
 │   │   └── ui/
+│   │       ├── accordion.tsx
+│   │       ├── badge.tsx
+│   │       ├── brand-marquee.tsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── dialog.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       ├── scroll-reveal.tsx
+│   │       ├── select.tsx
+│   │       ├── sheet.tsx
+│   │       └── textarea.tsx
 │   │
 │   ├── content/
 │   │   ├── awards.ts
@@ -218,8 +444,16 @@ new-india-automotive/
 │   │   └── why-choose-us.ts
 │   │
 │   ├── hooks/
+│   │   └── use-scroll-position.ts
+│   │
 │   ├── lib/
+│   │   ├── metadata.ts
+│   │   ├── utils.ts
+│   │   ├── validations.ts
+│   │   └── whatsapp.ts
+│   │
 │   └── types/
+│       └── index.ts
 │
 ├── components.json
 ├── eslint.config.mjs
@@ -227,100 +461,216 @@ new-india-automotive/
 ├── package.json
 ├── package-lock.json
 ├── tsconfig.json
+├── .gitignore
+├── AGENTS.md
 └── README.md
-This is an architectural overview; individual folders contain additional
-components and utilities.
-Routing
-  Route                           Purpose
-  /                             Homepage
-/about                        Company information
-/services                     Services overview
-/services/accident-repair     Accident repair details
-/services/chassis-repair      Chassis repair details
-/services/denting             Denting details
-/services/painting            Painting details
-/services/mechanical-repair   Mechanical repair details
-/services/electrical-work     Electrical work details
-/services/truck-body-repair   Truck body repair details
-/services/towing-service      Towing service details
-/brands                       Vehicle brands
-/gallery                      Workshop gallery
-/contact                      Contact information
-/book-appointment             Appointment request instructions
-/insurance                    Repair enquiry
-/faq                          FAQ page
+```
 
-Service routes are generated from src/content/services.ts.
-Content Architecture
-  File                                Responsibility
-  src/content/company.ts            Business name, contact details,
-address, services and listed brands
+> **Note:** The structure is an architectural reference. Individual component files may evolve as the application is updated.
 
-  src/content/navigation.ts         Main, About, Services and footer
-navigation
+### 📁 Important Directories
 
-  src/content/services.ts           Service names, descriptions, images
-and slugs
+| Directory | Responsibility |
+|---|---|
+| `src/app/` | Application routes and page rendering |
+| `src/components/` | Reusable React components |
+| `src/content/` | Centralized business and website content |
+| `src/hooks/` | Reusable React hooks |
+| `src/lib/` | Utility functions and helper logic |
+| `src/types/` | Shared TypeScript types |
+| `public/` | Static images, logos and other assets |
 
-  src/content/awards.ts             Award details and image dimensions
+---
 
-  src/content/seo.ts                Canonical site URL, default SEO
-values and homepage SEO
+## 🧭 Application Routes
 
-  src/content/brands.ts             Brand-related content module
+The website uses the Next.js App Router.
 
-  src/content/faqs.ts               FAQ content module
+| Route | Page | Description |
+|---|---|---|
+| `/` | Home | Main landing page |
+| `/about` | About Us | Company introduction and awards |
+| `/services` | Services | Complete services overview |
+| `/services/accident-repair` | Accident Repair | Individual service details |
+| `/services/chassis-repair` | Chassis Repair | Individual service details |
+| `/services/denting` | Denting | Individual service details |
+| `/services/painting` | Painting | Individual service details |
+| `/services/mechanical-repair` | Mechanical Repair | Individual service details |
+| `/services/electrical-work` | Electrical Work | Individual service details |
+| `/services/truck-body-repair` | Truck Body Repair | Individual service details |
+| `/services/towing-service` | Towing Service | Individual service details |
+| `/brands` | Brands | Vehicle brands |
+| `/gallery` | Gallery | Workshop images |
+| `/contact` | Contact | Contact information |
+| `/book-appointment` | Appointment | Appointment request instructions |
+| `/insurance` | Insurance | Workshop enquiry |
+| `/faq` | FAQ | Frequently asked questions |
 
-  src/content/gallery.ts            Gallery content module
+### Dynamic Routing
 
-  src/content/insurance.ts          Insurance-related content module
+The route:
 
-  src/content/testimonials.ts       Testimonial content module
-src/content/why-choose-us.ts      Business highlights content module
-Centralized content avoids repeating shared business information across
-page components. Not every content module is necessarily connected to a
-currently rendered page; inspect its consumers before assuming it drives
-a live section.
-UI and Component Architecture
-Layout --- src/components/layout/
-- navbar.tsx --- desktop navigation and dropdowns.
-- mobile-nav.tsx --- mobile navigation.
-- footer.tsx --- shared footer.
-- company-logo.tsx --- company logo.
-- theme-provider.tsx --- theme provider.
-- theme-toggle.tsx --- appearance control.
-- header.tsx --- reusable header component.
-The root layout src/app/layout.tsx composes the theme provider,
-navbar, page content, footer, and floating WhatsApp button.
-Home --- src/components/home/
-Contains independently maintained homepage sections such as hero,
-introduction, services, brands, statistics, gallery preview, FAQ
-preview, testimonials, insurance overview, and CTA.
-Services --- src/components/services/
-Contains reusable service card and service detail components.
-Gallery --- src/components/gallery/
-Contains gallery grid and lightbox components.
-Shared --- src/components/shared/
-Contains reusable animated sections, call button, container, floating
-actions, page hero, section heading, and WhatsApp button.
-UI --- src/components/ui/
-Contains reusable interface primitives such as buttons, cards, dialogs,
-accordions, inputs, labels, selects, sheets, textareas, brand marquee,
-and scroll reveal.
-Assets
-Static assets are served from public/ and referenced using URL paths
-beginning with /.
+```text
+/services/[slug]
+```
 
-  Directory                         Contents
-  public/brands/                  Vehicle manufacturer logos
-public/images/awards/           Award and certificate images
-public/images/hero/             Hero imagery
-public/images/hero/slideshow/   Slideshow images
-public/images/services/         Service images
-public/images/team/             Director/team photographs
-public/images/workshop/         Workshop photographs
+is used to render individual service pages dynamically.
 
-Example:
+Service information is retrieved from:
+
+```text
+src/content/services.ts
+```
+
+The implementation uses `generateStaticParams()` to generate service route parameters and `generateMetadata()` to provide service-specific metadata.
+
+---
+
+## 🧩 Component Architecture
+
+The project separates application functionality into reusable components.
+
+### 🧭 Layout Components
+
+Location: `src/components/layout/`
+
+| Component | Responsibility |
+|---|---|
+| Navbar | Main desktop navigation |
+| MobileNav | Mobile navigation |
+| Header | Reusable header |
+| Footer | Shared footer |
+| CompanyLogo | Company logo |
+| ThemeProvider | Theme management |
+| ThemeToggle | Appearance control |
+
+### 🏠 Homepage Components
+
+Location: `src/components/home/`
+
+Homepage sections are maintained independently to make UI updates easier.
+
+Examples:
+
+- HeroSection
+- IntroSection
+- ServicesOverview
+- BrandsSection
+- HomeStatistics
+- WhyChooseUs
+- InsuranceOverview
+- GalleryPreview
+- FAQPreview
+- TestimonialsSection
+- CTASection
+
+### 🔧 Service Components
+
+Location: `src/components/services/`
+
+- ServiceCard
+- ServiceDetail
+
+### 🖼️ Gallery Components
+
+Location: `src/components/gallery/`
+
+- GalleryGrid
+- GalleryLightbox
+
+### 🏆 Awards Components
+
+Location: `src/components/awards/`
+
+- AwardsSection
+
+### ♻️ Shared Components
+
+Location: `src/components/shared/`
+
+Reusable elements for common interface functionality:
+
+- AnimatedSection
+- CallButton
+- Container
+- FloatingActions
+- PageHero
+- SectionHeading
+- WhatsAppButton
+
+### 🎨 UI Components
+
+Location: `src/components/ui/`
+
+Reusable UI primitives such as buttons, cards, dialogs, accordions, inputs, selects, sheets, textareas, and scroll-reveal components.
+
+---
+
+## 📊 Content Management Architecture
+
+The project uses centralized TypeScript files to manage business information and website content.
+
+| File | Responsibility |
+|---|---|
+| `company.ts` | Company name, address, phone, email and business information |
+| `navigation.ts` | Navigation links and menu configuration |
+| `services.ts` | Service names, descriptions, image paths and slugs |
+| `awards.ts` | Awards, issuers, recipients and image dimensions |
+| `seo.ts` | Website URL, SEO title, descriptions and keywords |
+| `brands.ts` | Brand-related content |
+| `faqs.ts` | FAQ content |
+| `gallery.ts` | Gallery content |
+| `insurance.ts` | Insurance-related content |
+| `testimonials.ts` | Testimonial content |
+| `why-choose-us.ts` | Company highlights |
+
+### Example: Company Configuration
+
+`src/content/company.ts`
+
+```ts
+export const company = {
+  name: "New India Automotive",
+  established: 2017,
+
+  address: {
+    line1: "Bhatale, Vehele",
+    city: "Bhiwandi",
+    state: "Maharashtra",
+    pincode: "421302",
+    country: "India",
+  },
+
+  phone: {
+    primary: "8237263878",
+    alternate: "8149949328",
+  },
+
+  email: "newindiaautomotivebuisness@gmail.com",
+};
+```
+
+Centralized configuration helps maintain consistent business information throughout the website.
+
+---
+
+## 🖼️ Assets Management
+
+All static assets are stored inside the `public/` directory.
+
+| Folder | Purpose |
+|---|---|
+| `public/brands/` | Manufacturer logos |
+| `public/images/awards/` | Award photographs |
+| `public/images/hero/` | Homepage hero images |
+| `public/images/hero/slideshow/` | Hero slideshow assets |
+| `public/images/services/` | Service images |
+| `public/images/team/` | Team/director photographs |
+| `public/images/workshop/` | Workshop photographs |
+
+### Example Asset Usage
+
+```tsx
 import Image from "next/image";
 
 <Image
@@ -329,151 +679,401 @@ import Image from "next/image";
   width={1200}
   height={800}
 />
-Use the real dimensions and aspect ratio of each asset. Do not stretch
-images.
-SEO
-SEO uses the Next.js metadata APIs.
-- src/app/layout.tsx defines global title templates, descriptions,
-  keywords, Open Graph data, robots directives, and icons.
-- Page files export page-specific metadata.
-- Dynamic service routes generate metadata from the selected service.
-- src/app/sitemap.ts generates sitemap URLs for static routes and
-  service detail routes.
-- src/app/robots.ts allows general crawling and references the
-  sitemap.
-- src/content/seo.ts stores the canonical site URL and shared SEO
-  text.
-Customer Contact Flows
-The current website uses direct customer contact actions:
-- Phone: tel: links open the visitor's calling application.
-- Email: mailto: links open the visitor's email application.
-- WhatsApp: https://wa.me/ links open WhatsApp with a prefilled
-  enquiry message.
-- Directions: Google Maps search URL opens a location search.
-Phone numbers and WhatsApp destinations are sourced from
-src/content/company.ts.
-Appointment requests
-The appointment page explicitly states that online booking is not
-available yet. Visitors can call or WhatsApp the workshop to request a
-suitable time. The website does not automatically create or confirm
-appointments.
-Contact form
-The contact page explicitly says that it does not submit an online
-contact form. Do not treat the presence of form-related component files
-as proof of a connected form backend.
-Insurance
-The insurance route is a workshop enquiry page, not a digital insurance
-claim filing or claim tracking system.
-Local Setup
-Prerequisites
-- Node.js compatible with the installed Next.js version.
-- npm.
-- Git.
-1. Clone
+```
+
+**Image guidelines:**
+
+- Use descriptive filenames.
+- Prefer optimized WebP images where suitable.
+- Maintain original image proportions.
+- Use meaningful alternative text.
+- Avoid unnecessarily large image files.
+
+---
+
+## 🔍 SEO Architecture
+
+The website uses Next.js Metadata APIs for search engine optimization.
+
+### Global SEO
+
+Implemented in:
+
+```text
+src/app/layout.tsx
+```
+
+Includes:
+
+- Default page title
+- Title template
+- Meta description
+- Keywords
+- Open Graph metadata
+- Website icon
+- Robots indexing directives
+- Metadata base URL
+
+### Central SEO Configuration
+
+```text
+src/content/seo.ts
+```
+
+Stores:
+
+- Website name
+- Canonical website URL
+- Default SEO title
+- Default description
+- Keyword configuration
+- Homepage SEO content
+
+### Dynamic SEO
+
+Service detail pages generate page-specific metadata based on the service slug.
+
+### Sitemap
+
+```text
+src/app/sitemap.ts
+```
+
+Generates sitemap entries for static website routes and service detail routes.
+
+### Robots
+
+```text
+src/app/robots.ts
+```
+
+Defines crawler access rules and references the sitemap.
+
+---
+
+## 📞 Customer Communication Flow
+
+The current website provides direct customer communication options.
+
+```mermaid
+flowchart TD
+    A["👤 Website Visitor"] --> B["📞 Contact Options"]
+
+    B --> C["Phone"]
+    B --> D["WhatsApp"]
+    B --> E["Email"]
+    B --> F["Google Maps"]
+
+    C --> G["Call Workshop"]
+    D --> H["Send Enquiry"]
+    E --> I["Compose Email"]
+    F --> J["Get Directions"]
+```
+
+### Communication Methods
+
+| Method | Implementation |
+|---|---|
+| Phone | `tel:` links |
+| WhatsApp | WhatsApp Business URL |
+| Email | `mailto:` links |
+| Location | Google Maps search URL |
+
+Contact information is sourced from:
+
+```text
+src/content/company.ts
+```
+
+### Appointment Request Flow
+
+Visitors can call or WhatsApp the workshop to discuss vehicle repair requirements and request a suitable appointment time.
+
+**Current status:** No automatic appointment creation, online booking database, or appointment confirmation system is connected.
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+Make sure the following tools are installed:
+
+- Node.js
+- npm
+- Git
+- Code editor (VS Code recommended)
+
+### 1. Clone Repository
+
+```bash
 git clone https://github.com/altafshaikh7/new-india-automotive.git
+```
+
+### 2. Navigate to Project
+
+```bash
 cd new-india-automotive
-2. Install dependencies
+```
+
+### 3. Install Dependencies
+
+```bash
 npm install
-3. Start development server
+```
+
+### 4. Start Development Server
+
+```bash
 npm run dev
-4. Open locally
-Visit http://localhost:3000.
-Scripts
-  Command           Description
-  npm run dev     Start local development server
-npm run build   Create production build
-npm run start   Start production server after build
-npm run lint    Run ESLint
+```
 
-Before deployment, run:
-npm run lint
+### 5. Open in Browser
+
+```text
+http://localhost:3000
+```
+
+The application will run locally with Next.js development mode and hot reload.
+
+---
+
+## 📜 Available Commands
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run build` | Create production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+
+### Production Build
+
+```bash
 npm run build
-Environment Variables
-The documented frontend functionality does not currently require
-application-specific environment variables.
+```
 
-If a future integration adds a database, email provider, CMS, analytics,
-or another third-party service, configure credentials through
-environment variables and the hosting provider's environment settings.
-Never commit secrets to Git.
-Deployment
-The production website is deployed on Vercel:
+### Production Server
 
-https://new-india-automotive.vercel.app/
-
-Typical deployment flow:
-1. Push changes to the connected GitHub repository.
-2. Vercel detects the repository update.
-3. Vercel installs dependencies using the lockfile.
-4. Vercel runs the Next.js production build.
-5. A successful deployment publishes the updated website.
-Repository: https://github.com/altafshaikh7/new-india-automotive
-
-For local production verification:
-npm run build
+```bash
 npm run start
-Confirm deployment settings in the Vercel dashboard rather than assuming
-configuration that is not present in the repository.
-Accessibility and Responsive Design
-The project uses responsive Tailwind layouts and reusable UI components.
-It includes semantic HTML, accessible labels for several icon-only
-controls, visible focus styles in navigation, and reduced-motion
-handling in selected animated sections.
+```
 
-When extending the website:
-- Use semantic headings and landmarks.
-- Add meaningful alternative text to informative images.
-- Give links and buttons clear accessible names.
-- Preserve visible keyboard focus.
-- Test navigation and dialogs with a keyboard.
-- Respect prefers-reduced-motion.
-- Test mobile, tablet, laptop, and wide desktop layouts.
-Current Limitations
-These are important distinctions between the current frontend and
-possible future backend capabilities:
-1. No database layer is configured in the current repository
-   architecture.
-2. No dedicated backend API service is configured.
-3. Online appointment booking is not implemented; the page directs
-   visitors to phone and WhatsApp.
-4. No automatic appointment confirmation is performed.
-5. The contact page does not submit an online contact form to a server.
-6. The insurance page is an enquiry page, not a claim
-   submission/tracking portal.
-7. The FAQ page currently does not render a published FAQ list.
-8. The gallery route currently renders a small set of workshop images
-   directly from local assets.
-9. Some content modules and reusable components exist but may not be
-   connected to a visible route.
-Future Improvements
-Possible enhancements, depending on business requirements:
-- Backend-powered appointment requests and confirmation notifications.
-- Contact enquiry processing with spam protection.
-- Admin dashboard for services, gallery, awards, and enquiries.
-- Database integration for persistent appointment and customer
-  records.
-- CMS integration for non-technical content updates.
-- Published FAQs and appropriate structured data.
-- Analytics and conversion tracking with privacy controls.
-- Automated accessibility, link, and responsive-layout checks.
-- Image optimization and performance monitoring using real
-  measurements.
-Contributing
+### Code Quality Check
+
+```bash
+npm run lint
+```
+
+---
+
+## 🌍 Environment Configuration
+
+The currently documented frontend functionality does not require application-specific environment variables.
+
+If future integrations introduce external services, database credentials, email services, or API keys, configure them using environment variables.
+
+Example:
+
+```env
+# Example only — configure when an integration is implemented
+
+DATABASE_URL=
+NEXT_PUBLIC_SITE_URL=
+EMAIL_API_KEY=
+```
+
+**Security:** Never commit actual API keys, database credentials, passwords, or secrets to GitHub.
+
+---
+
+## 🚀 Deployment
+
+The website is hosted on **Vercel**.
+
+### Live Deployment
+
+[https://new-india-automotive.vercel.app/](https://new-india-automotive.vercel.app/)
+
+### Deployment Workflow
+
+```mermaid
+flowchart LR
+    A["💻 Local Development"] --> B["Git Commit"]
+    B --> C["GitHub Repository"]
+    C --> D["Vercel Build"]
+    D --> E["Production Deployment"]
+    E --> F["🌐 Live Website"]
+```
+
+### Deployment Steps
+
+1. Make changes in the local project.
+2. Test the application.
+3. Commit changes to Git.
+4. Push changes to the connected GitHub repository.
+5. Vercel builds and deploys the application according to its project configuration.
+
+### Git Commands
+
+```bash
+git add .
+git commit -m "Update website"
+git push origin main
+```
+
+---
+
+## ♿ Accessibility & Responsiveness
+
+The application uses responsive Tailwind CSS layouts and reusable UI components.
+
+Development considerations include:
+
+- Semantic HTML structure.
+- Meaningful image alternative text.
+- Accessible navigation labels.
+- Visible keyboard focus styles.
+- Responsive page layouts.
+- Reduced-motion support in selected animated components.
+
+Future UI changes should preserve keyboard accessibility and respect user motion preferences.
+
+---
+
+## ⚠️ Current Implementation Status
+
+The following table distinguishes existing frontend functionality from features that are not yet connected to backend systems.
+
+| Feature | Current Status |
+|---|---|
+| Homepage | Implemented |
+| About Us | Implemented |
+| Services Overview | Implemented |
+| Dynamic Service Pages | Implemented |
+| Vehicle Brands | Implemented |
+| Workshop Gallery | Implemented |
+| Awards Section | Implemented |
+| Contact Information | Implemented |
+| Phone & WhatsApp Links | Implemented |
+| Google Maps Directions | Implemented |
+| SEO Metadata | Implemented |
+| Sitemap | Implemented |
+| Robots Configuration | Implemented |
+| Online Appointment Booking | Not Implemented |
+| Appointment Database | Not Implemented |
+| Contact Form Backend | Not Implemented |
+| Admin Dashboard | Not Implemented |
+| Customer Authentication | Not Implemented |
+| Insurance Claim Tracking | Not Implemented |
+
+**Technical note:** Form-related component files exist in the repository, but their presence alone does not mean a production form submission backend is connected.
+
+---
+
+## 🛣️ Future Roadmap
+
+Potential improvements for future development:
+
+### Phase 1 — Website Improvements
+
+- Expand workshop gallery.
+- Add more verified company information.
+- Publish frequently asked questions.
+- Continue accessibility and performance improvements.
+
+### Phase 2 — Backend Integration
+
+- Build appointment request API.
+- Add contact enquiry processing.
+- Introduce email notifications.
+- Add server-side validation and spam protection.
+
+### Phase 3 — Administration
+
+- Admin dashboard.
+- Manage service information.
+- Manage gallery photographs.
+- Manage awards and company content.
+- Review customer enquiries.
+
+### Phase 4 — Business Management
+
+- Persistent appointment records.
+- Customer enquiry management.
+- Service request tracking.
+- Reporting and analytics.
+
+These are proposed enhancements, not existing application features.
+
+---
+
+## 🤝 Contributing
+
+Contributions and suggestions are welcome.
+
+### Contribution Workflow
+
 1. Fork the repository.
-2. Create a feature branch.
-3. Make focused changes consistent with the existing architecture.
-4. Run lint and production build checks.
-5. Submit a pull request with a clear description and screenshots for
-   UI changes.
+2. Create a new feature branch.
+3. Make your changes.
+4. Run lint and build checks.
+5. Commit your changes.
+6. Open a Pull Request.
+
+### Create a Feature Branch
+
+```bash
 git checkout -b feature/your-feature-name
+```
+
+### Validate Changes
+
+```bash
 npm run lint
 npm run build
-License
-No explicit open-source license is currently declared in the repository.
-Unless a license is added, do not assume the source code is available
-for unrestricted reuse, redistribution, or modification.
-Project Links
-- Live Website: https://new-india-automotive.vercel.app/
-- GitHub Repository:
-  https://github.com/altafshaikh7/new-india-automotive
-Built with Next.js, React, TypeScript, and Tailwind CSS.
+```
+
+### Commit Changes
+
+```bash
+git add .
+git commit -m "Add your feature description"
+git push origin feature/your-feature-name
+```
+
+---
+
+## 📄 License
+
+No explicit open-source license is currently declared in this repository.
+
+Unless a license is added, the project should not be assumed to be available for unrestricted reuse, redistribution, or modification.
+
+---
+
+## 📬 Contact & Project Links
+
+<div align="center">
+
+### NEW INDIA AUTOMOTIVE
+
+**Commercial Vehicle Accident Repair**
+
+📍 Bhatale, Vehele, Bhiwandi, Maharashtra – 421302, India
+
+📞 **8237263878**
+
+📧 **newindiaautomotivebuisness@gmail.com**
+
+🌐 [Visit Website](https://new-india-automotive.vercel.app/)
+
+💻 [GitHub Repository](https://github.com/altafshaikh7/new-india-automotive)
+
+---
+
+**Built with ❤️ using Next.js, React, TypeScript & Tailwind CSS.**
+
+</div>
